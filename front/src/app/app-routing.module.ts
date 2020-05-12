@@ -12,9 +12,13 @@ import { ProductDetailsComponent } from './home/product-list/product-details/pro
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+
   { path: 'product', component: ProductDetailsComponent},
   { path: 'special-events', component: SpecialEventsComponent, canActivate: [AuthGuard] }, // profile de client
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+ // otherwise redirect to home
+  { path: '**', redirectTo: 'special-events'}
+
 ];
 
 
